@@ -24,6 +24,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Separator } from "./separator";
 import Link from "next/link";
+import Cart from "./cart";
 
 const Header = () => {
   const { status, data } = useSession();
@@ -36,97 +37,103 @@ const Header = () => {
     await signOut();
   };
   return (
-    <>
-      <Card className="flex items-center justify-between p-5 p-[2rem]">
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="outline" size="icon">
-              <MenuIcon />
-            </Button>
-          </SheetTrigger>
+    <Card className="flex items-center justify-between p-5 p-[2rem]">
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="outline" size="icon">
+            <MenuIcon />
+          </Button>
+        </SheetTrigger>
 
-          <SheetContent side="left">
-            <SheetHeader className="text-left text-lg font-semibold">
-              Menu
-            </SheetHeader>
+        <SheetContent side="left">
+          <SheetHeader className="text-left text-lg font-semibold">
+            Menu
+          </SheetHeader>
 
-            {status === "authenticated" && data?.user && (
-              <div className="flex flex-col">
-                <div className="my-4 flex items-center gap-2">
-                  <Avatar>
-                    <AvatarFallback>
-                      {data.user.name?.[0].toUpperCase()}
-                    </AvatarFallback>
+          {status === "authenticated" && data?.user && (
+            <div className="flex flex-col">
+              <div className="my-4 flex items-center gap-2">
+                <Avatar>
+                  <AvatarFallback>
+                    {data.user.name?.[0].toUpperCase()}
+                  </AvatarFallback>
 
-                    {data.user.image && <AvatarImage src={data.user.image} />}
-                  </Avatar>
-                  <div className="flex flex-col">
-                    <p className="font-medium">{data.user.name}</p>
-                    <p className="text-sm opacity-75">Boas Compras!</p>
-                  </div>
+                  {data.user.image && <AvatarImage src={data.user.image} />}
+                </Avatar>
+                <div className="flex flex-col">
+                  <p className="font-medium">{data.user.name}</p>
+                  <p className="text-sm opacity-75">Boas Compras!</p>
                 </div>
-                <Separator />
               </div>
+              <Separator />
+            </div>
+          )}
+
+          <div className="mt-2 flex flex-col gap-2">
+            {status === "unauthenticated" && (
+              <Button
+                onClick={handleLoginClick}
+                variant="outline"
+                className="w-full justify-start gap-2"
+              >
+                <LogIn size={16} />
+                Fazer Login
+              </Button>
             )}
 
-            <div className="mt-2 flex flex-col gap-2">
-              {status === "unauthenticated" && (
+            {status === "authenticated" && (
+              <Button
+                onClick={handleLogoutClick}
+                variant="outline"
+                className="w-full justify-start gap-2"
+              >
+                <LogOut size={16} />
+                Fazer Logout
+              </Button>
+            )}
+            <Button variant="outline" className="w-full justify-start gap-2">
+              <HomeIcon size={16} />
+              Início
+            </Button>
+
+            <Button variant="outline" className="w-full justify-start gap-2">
+              <PercentCircle size={16} />
+              Ofertas
+            </Button>
+
+            <SheetClose asChild>
+              <Link href="/catalog">
                 <Button
-                  onClick={handleLoginClick}
                   variant="outline"
                   className="w-full justify-start gap-2"
                 >
-                  <LogIn size={16} />
-                  Fazer Login
+                  <ListOrderedIcon size={16} />
+                  Catálogo
                 </Button>
-              )}
+              </Link>
+            </SheetClose>
+          </div>
+        </SheetContent>
+      </Sheet>
 
-              {status === "authenticated" && (
-                <Button
-                  onClick={handleLogoutClick}
-                  variant="outline"
-                  className="w-full justify-start gap-2"
-                >
-                  <LogOut size={16} />
-                  Fazer Logout
-                </Button>
-              )}
-              <Button variant="outline" className="w-full justify-start gap-2">
-                <HomeIcon size={16} />
-                Início
-              </Button>
+      <Link href="/">
+        <h1 className="text-lg font-semibold">
+          <span className="text-primary">ANC</span> Store
+        </h1>
+      </Link>
 
-              <Button variant="outline" className="w-full justify-start gap-2">
-                <PercentCircle size={16} />
-                Ofertas
-              </Button>
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="outline" size="icon">
+            <ShoppingCart />
+          </Button>
+        </SheetTrigger>
 
-              <SheetClose asChild>
-                <Link href="/catalog">
-                  <Button
-                    variant="outline"
-                    className="w-full justify-start gap-2"
-                  >
-                    <ListOrderedIcon size={16} />
-                    Catálogo
-                  </Button>
-                </Link>
-              </SheetClose>
-            </div>
-          </SheetContent>
-        </Sheet>
-
-        <Link href="/">
-          <h1 className="text-lg font-semibold">
-            <span className="text-primary">ANC</span> Store
-          </h1>
-        </Link>
-
-        <Button variant="outline" size="icon">
-          <ShoppingCart />
-        </Button>
-      </Card>
-    </>
+        <SheetContent>
+          <Cart />
+        </SheetContent>
+      </Sheet>
+    </Card>
   );
 };
 
