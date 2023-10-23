@@ -13,6 +13,7 @@ interface ProductInfoProps {
 
 const ProductInfo = ({ product }: ProductInfoProps) => {
   const [quantity, setQuantity] = useState(1);
+
   const { addProductToCart } = useContext(CartContext);
 
   const handleDecreaseQuantityClick = () => {
@@ -33,7 +34,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
       <div className="flex items-center gap-2">
         <h1 className="text-xl font-bold">
-          R$ {product.totalPrice.toFixed(2)}
+          R$ {Number(product.totalPrice).toFixed(2)}
         </h1>
         {product.discountPercentage > 0 && (
           <DiscountBadge>{product.discountPercentage}</DiscountBadge>
@@ -68,7 +69,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
       <div className="mt-8 flex flex-col gap-3">
         <h3 className="font-bold">Descrição</h3>
-        <p className="text-justify text-sm opacity-75">{product.description}</p>
+        <p className="text-justify text-sm opacity-60">{product.description}</p>
       </div>
 
       <Button
@@ -79,17 +80,20 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
       </Button>
 
       <div className="mt-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <TruckIcon />
 
           <div className="flex flex-col">
-            <p className="text-sx">
-              Entrega via <span className="font-semibold">ANC Truck</span>
-              <p className="text-xs text-primary">Envio para todo o brasil</p>
+            <p className="text-xs">
+              Entrega via <span className="font-bold">FSPacket®</span>
+            </p>
+            <p className="text-xs text-[#8162FF]">
+              Envio para <span className="font-bold">todo Brasil</span>
             </p>
           </div>
         </div>
-        <p className="text-xs font-bold">Frete Grátis</p>
+
+        <p className="text-xs font-bold">Frete grátis</p>
       </div>
     </div>
   );
