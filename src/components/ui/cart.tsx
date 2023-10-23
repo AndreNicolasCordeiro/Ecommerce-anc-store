@@ -50,37 +50,40 @@ const Cart = () => {
         </div>
        </ScrollArea>
       </div>
-
-      <div className="flex flex-col gap-3">
-        <Separator />
-        <div className="flex items-center justify-between text-xs">
-          <p>Subtotal</p>
-          <p>R$ {subTotal.toFixed(2)}</p>
+        
+        {products.length > 0 && (
+          <div className="flex flex-col gap-3">
+          <Separator />
+          <div className="flex items-center justify-between text-xs">
+            <p>Subtotal</p>
+            <p>R$ {subTotal.toFixed(2)}</p>
+          </div>
+  
+          <Separator />
+  
+          <div className="flex items-center justify-between text-xs">
+            <p>Entrega</p>
+            <p>Grátis</p>
+          </div>
+  
+          <Separator />
+  
+          <div className="flex items-center justify-between text-xs">
+            <p>Descontos</p>
+            <p>R$ {totalDiscount.toFixed(2)}</p>
+          </div>
+  
+          <Separator />
+  
+          <div className="flex items-center justify-between text-sm font-bold">
+            <p>Total</p>
+            <p>R$ {total.toFixed(2)}</p>
+          </div>
+  
+          <Button className="uppercase font-bold mt-7" onClick={handleFinishPurchaseClick}>Finalizar Compra</Button>
         </div>
-
-        <Separator />
-
-        <div className="flex items-center justify-between text-xs">
-          <p>Entrega</p>
-          <p>Grátis</p>
-        </div>
-
-        <Separator />
-
-        <div className="flex items-center justify-between text-xs">
-          <p>Descontos</p>
-          <p>R$ {totalDiscount.toFixed(2)}</p>
-        </div>
-
-        <Separator />
-
-        <div className="flex items-center justify-between text-sm font-bold">
-          <p>Total</p>
-          <p>R$ {total.toFixed(2)}</p>
-        </div>
-
-        <Button className="uppercase font-bold mt-7" onClick={handleFinishPurchaseClick}>Finalizar Compra</Button>
-      </div>
+        )}
+      
     </div>
   );
 };
