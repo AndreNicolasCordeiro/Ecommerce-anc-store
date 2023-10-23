@@ -39,21 +39,21 @@ export const CartContext = createContext<ICartContext>({
 const CartProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<CartProduct[]>([]);
 
-  //Total sem desconto
+  // Total sem descontos
   const subTotal = useMemo(() => {
     return products.reduce((acc, product) => {
-      return acc + Number(product.basePrice);
+      return acc + Number(product.basePrice) * product.quantity;
     }, 0);
   }, [products]);
 
-  //Total com desconto
+  // Total com descontos
   const total = useMemo(() => {
     return products.reduce((acc, product) => {
-      return acc + product.totalPrice;
+      return acc + product.totalPrice * product.quantity;
     }, 0);
   }, [products]);
 
-  const totalDiscount = total - subTotal;
+  const totalDiscount = subTotal - total;
 
   const addProductToCart = (product: CartProduct) => {
     // se o produto já estiver no carrinho, apenas aumente a sua quantidade
