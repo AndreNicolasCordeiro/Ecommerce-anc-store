@@ -37,7 +37,7 @@ const Header = () => {
     await signOut();
   };
   return (
-    <Card className="flex items-center justify-between p-5 p-[2rem]">
+    <Card className="flex items-center justify-between p-[2rem]">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon">
