@@ -4,621 +4,186 @@ const prisma = new PrismaClient();
 
 async function main() {
   try {
-    const carroCategory = await prisma.category.create({
+    const chevroletCategory = await prisma.category.create({
       data: {
-        name: "Carros",
-        slug: "carros",
+        name: "Chevrolet",
+        slug: "chevrolet",
         imageUrl:
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
+          "https://utfs.io/f/5b454876-d8af-45fa-9d45-e71fdb8359e2-8c7v5x.jpg",
       },
     });
 
-    const carros = [
+    const chevrolet = [
       {
-        name: "Vectra Verde 2010",
-        slug: "vectra-verde-2010",
+        name: "Equinox-2025",
+        slug: "equinox-2025",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
         imageUrls: [
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
+          "https://utfs.io/f/5b454876-d8af-45fa-9d45-e71fdb8359e2-8c7v5x.jpg",
+          "https://utfs.io/f/8ff0aa78-965f-4223-b049-6db0f0693761-8c7v5w.jpg",
+          "https://utfs.io/f/ab8c35be-bcfa-491a-a2c7-74f7ef7a16d0-8c7v5v.jpg",
+          "https://utfs.io/f/d1c9da18-be10-4a10-9b29-0582d6dfbe64-8c7v5u.jpg",
         ],
-        basePrice: 20640,
-        categoryId: carroCategory.id,
-        discountPercentage: 10, // 10% discount
+        basePrice: 800640,
+        categoryId: chevroletCategory.id,
+        discountPercentage: 90, // 10% discount
       },
       {
-        name: "Vectra Verde 2010",
-        slug: "vectra-verde-2010",
+        name: "Camaro The Exorcist 2018",
+        slug: "camaro-the-exorcist-2018",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
         imageUrls: [
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
+          "https://utfs.io/f/9f56ff42-1c00-476b-882b-203bc93f5833-ccabup.jpg",
+          "https://utfs.io/f/490988d4-3a54-45ae-afbb-233dc874747f-ccabuo.jpg",
+          "https://utfs.io/f/d2098529-15e8-4ede-ae3e-e2f3547d0dea-ccabun.jpg",
+          "https://utfs.io/f/8a7f72a2-59c8-408d-a6c7-1ca1ae631cb0-ccabum.jpg",
         ],
-        basePrice: 20640,
-        categoryId: carroCategory.id,
-        discountPercentage: 10, // 10% discount
+        basePrice: 350640,
+        categoryId: chevroletCategory.id,
+        discountPercentage: 35, // 10% discount
       },
       {
-        name: "Vectra Verde 2010",
-        slug: "vectra-verde-2010",
+        name: "Blazer 2024",
+        slug: "blazer-2024",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
         imageUrls: [
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
+          "https://utfs.io/f/7f121689-565a-4781-a4cd-2333e26cf06e-h9r8qn.jpg",
+          "https://utfs.io/f/b809db38-da3e-4ea2-88b1-2c2b82e1f78d-h9r8qm.jpg",
+          "https://utfs.io/f/8fb9cfb9-0d3c-479c-a0df-19fd60805eaf-h9r8ql.jpg",
+          "https://utfs.io/f/362cef4c-cd75-45ce-b856-d37dba046262-h9r8qk.jpg",
         ],
-        basePrice: 20640,
-        categoryId: carroCategory.id,
-        discountPercentage: 10, // 10% discount
+        basePrice: 200640,
+        categoryId: chevroletCategory.id,
+        discountPercentage: 80, // 10% discount
       },
       {
-        name: "Vectra Verde 2010",
-        slug: "vectra-verde-2010",
+        name: "Silverado 2024",
+        slug: "silverado-2024",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
         imageUrls: [
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
+          "https://utfs.io/f/3242da1e-0651-49de-991d-619fc1b14b22-brmimo.jpg",
+          "https://utfs.io/f/6971f57c-e51d-4a8a-ac70-07058feebe38-brmimp.jpg",
+          "https://utfs.io/f/349a3e6c-118c-4a7d-a588-3128d3ae00f4-brmimq.jpg",
+          "https://utfs.io/f/f1f65378-baf6-471f-9eaf-924d9dd0497b-brmimr.jpg",
         ],
-        basePrice: 20640,
-        categoryId: carroCategory.id,
-        discountPercentage: 10, // 10% discount
-      },
-      {
-        name: "Vectra Verde 2010",
-        slug: "vectra-verde-2010",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-        imageUrls: [
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-          "https://utfs.io/f/ef10cff5-edaa-49c0-ba52-36c604960236-dkfr01.png",
-        ],
-        basePrice: 20640,
-        categoryId: carroCategory.id,
-        discountPercentage: 10, // 10% discount
+        basePrice: 206400,
+        categoryId: chevroletCategory.id,
+        discountPercentage: 14, // 10% discount
       },
     ];
 
     await prisma.product.createMany({
-      data: carros,
+      data: chevrolet,
     });
 
-    // const keyboardsCategory = await prisma.category.create({
-    //   data: {
-    //     name: "Teclados",
-    //     slug: "keyboards",
-    //     imageUrl: "https://fsw-store.s3.sa-east-1.amazonaws.com/keyboards.png",
-    //   },
-    // });
+    const volkswagenCategory = await prisma.category.create({
+      data: {
+        name: "Volkswagen",
+        slug: "volkswagen",
+        imageUrl: "https://utfs.io/f/fbc704f2-241d-4d29-acc4-c08c4752f680-xqn0h5.jpg",
+      },
+    });
 
-    // const keyboards = [
-    //   {
-    //     name: "Logitech MX Keys Mini",
-    //     slug: "logitech-mx-keys-mini",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-mx-keys-mini.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-mx-keys-mini.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-mx-keys-mini.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-mx-keys-mini.png",
-    //     ],
-    //     basePrice: 650,
-    //     categoryId: keyboardsCategory.id,
-    //     discountPercentage: 10, // 10% discount
-    //   },
-    //   {
-    //     name: "Logitech MX Keys S",
-    //     slug: "logitech-mx-keys-s",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-mx-keys-s.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-mx-keys-s.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-mx-keys-s.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-mx-keys-s.png",
-    //     ],
-    //     basePrice: 750,
-    //     categoryId: keyboardsCategory.id,
-    //     discountPercentage: 10, // 10% discount
-    //   },
-    //   {
-    //     name: "Logitech Pop Keys",
-    //     slug: "logitech-pop-keys",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-pop-keys.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-pop-keys.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-pop-keys.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-pop-keys.png",
-    //     ],
-    //     basePrice: 440,
-    //     categoryId: keyboardsCategory.id,
-    //     discountPercentage: 5, // 10% discount
-    //   },
-    //   {
-    //     name: "Logitech MX Mechanical",
-    //     slug: "logitech-mx-mechanical",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-mx-mechanical.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-mx-mechanical.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-mx-mechanical.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-mx-mechanical.png",
-    //     ],
-    //     basePrice: 700,
-    //     categoryId: keyboardsCategory.id,
-    //     discountPercentage: 15, // 10% discount
-    //   },
-    //   {
-    //     name: "Epomaker TH80",
-    //     slug: "epomaker-th80",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_epomaker-th80.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_epomaker-th80.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_epomaker-th80.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_epomaker-th80.png",
-    //     ],
-    //     basePrice: 500,
-    //     categoryId: keyboardsCategory.id,
-    //     discountPercentage: 5, // 10% discount
-    //   },
-    //   {
-    //     name: "Redragon Gamer Ashe",
-    //     slug: "redragon-gamer-ashe",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_redragon-gamer-ashe.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_redragon-gamer-ashe.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_redragon-gamer-ashe.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_redragon-gamer-ashe.png",
-    //     ],
-    //     basePrice: 400,
-    //     categoryId: keyboardsCategory.id,
-    //     discountPercentage: 25, // 10% discount
-    //   },
-    // ];
+    const volkswagen = [
+      {
+        name: "Golf GTI 2024",
+        slug: "golf-gti-2024",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
+        imageUrls: [
+          "https://utfs.io/f/fbc704f2-241d-4d29-acc4-c08c4752f680-xqn0h5.jpg",
+          "https://utfs.io/f/4ed06f80-f565-445a-8a17-ffad46d6224d-xqn0h6.jpg",
+          "https://utfs.io/f/e491519b-b11a-475d-824e-c719add4bafd-xqn0h7.jpg",
+          "https://utfs.io/f/9cc4a99f-204d-4169-8fad-33076529c2e1-xqn0h8.jpg",
+        ],
+        basePrice: 150000,
+        categoryId: volkswagenCategory.id,
+        discountPercentage: 10, // 10% discount
+      },
+      {
+        name: "Atlas 2024",
+        slug: "atlas-2024",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
+        imageUrls: [
+          "https://utfs.io/f/f38d723e-84f5-4f5d-afe3-9d5cba129cf9-bahc84.jpg",
+          "https://utfs.io/f/1b934e2a-cf35-45be-944a-1da8c5a37c1a-bahc83.jpg",
+          "https://utfs.io/f/726b1b52-0323-4724-a9f9-3001466cb867-bahc82.jpg",
+          "https://utfs.io/f/aca901a9-b545-4037-8f6a-a72af134b7e0-bahc81.jpg",
+        ],
+        basePrice: 750000,
+        categoryId: volkswagenCategory.id,
+        discountPercentage: 60, // 10% discount
+      },
+      {
+        name: "Jetta 2024",
+        slug: "jetta-2024",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
+        imageUrls: [
+          "https://utfs.io/f/7448c619-c4ca-43ec-94e7-d2edcee61200-s833xl.jpg",
+          "https://utfs.io/f/648470b5-43c5-4381-830c-6b67c90948c2-s833xk.jpg",
+          "https://utfs.io/f/e71b6021-2322-4999-8d5d-3be15f77331c-s833xj.jpg",
+          "https://utfs.io/f/e6f5ebd9-b929-40c0-b9da-5422c0839616-s833xi.jpg",
+        ],
+        basePrice: 444400,
+        categoryId: volkswagenCategory.id,
+        discountPercentage: 17, // 10% discount
+      },
+      {
+        name: "Logitech MX Mechanical",
+        slug: "logitech-mx-mechanical",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
+        imageUrls: [
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-mx-mechanical.png",
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-mx-mechanical.png",
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-mx-mechanical.png",
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-mx-mechanical.png",
+        ],
+        basePrice: 700,
+        categoryId: volkswagenCategory.id,
+        discountPercentage: 15, // 10% discount
+      },
+      {
+        name: "Epomaker TH80",
+        slug: "epomaker-th80",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
+        imageUrls: [
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/01_epomaker-th80.png",
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/02_epomaker-th80.png",
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/03_epomaker-th80.png",
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/04_epomaker-th80.png",
+        ],
+        basePrice: 500,
+        categoryId: volkswagenCategory.id,
+        discountPercentage: 5, // 10% discount
+      },
+      {
+        name: "Redragon Gamer Ashe",
+        slug: "redragon-gamer-ashe",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
+        imageUrls: [
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/01_redragon-gamer-ashe.png",
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/02_redragon-gamer-ashe.png",
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/03_redragon-gamer-ashe.png",
+          "https://fsw-store.s3.sa-east-1.amazonaws.com/04_redragon-gamer-ashe.png",
+        ],
+        basePrice: 400,
+        categoryId: volkswagenCategory.id,
+        discountPercentage: 25, // 10% discount
+      },
+    ];
 
-    // await prisma.product.createMany({
-    //   data: keyboards,
-    // });
-
-    // const headphonesCategory = await prisma.category.create({
-    //   data: {
-    //     name: "Fones",
-    //     slug: "headphones",
-    //     imageUrl: "https://fsw-store.s3.sa-east-1.amazonaws.com/headphones.png",
-    //   },
-    // });
-
-    // const headphones = [
-    //   {
-    //     name: "Logitech Zone Vibe 100",
-    //     slug: "logitech-zone-vibe-100",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-vibe.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-vibe.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-vibe.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-vibe.png",
-    //     ],
-    //     basePrice: 750,
-    //     categoryId: headphonesCategory.id,
-    //     discountPercentage: 10, // 10% discount
-    //   },
-    //   {
-    //     name: "Logitech Pro X 2 Lightspeed",
-    //     slug: "logitech-pro-x-2-lightspeed",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-lightspeed-phone.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-lightspeed-phone.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-lightspeed-phone.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-lightspeed-phone.png",
-    //     ],
-    //     basePrice: 1200,
-    //     categoryId: headphonesCategory.id,
-    //     discountPercentage: 5, // 10% discount
-    //   },
-    //   {
-    //     name: "Logitech Astro A30",
-    //     slug: "logitech-astro-a30",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-astro-a30.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-astro-a30.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-astro-a30.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-astro-a30.png",
-    //     ],
-    //     basePrice: 1500,
-    //     categoryId: headphonesCategory.id,
-    //     discountPercentage: 15, // 10% discount
-    //   },
-    //   {
-    //     name: "Logitech Zone Wired Earbuds",
-    //     slug: "logitech-zone-wired-earbuds",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-earbuds.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-earbuds.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-earbuds.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-earbuds.png",
-    //     ],
-    //     basePrice: 550,
-    //     categoryId: headphonesCategory.id,
-    //     discountPercentage: 5, // 10% discount
-    //   },
-    //   {
-    //     name: "Hyperx Cloud Stinger 2",
-    //     slug: "hyperx-cloud-stinger-2",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_hyperx-stinger.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_hyperx-stinger.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_hyperx-stinger.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_hyperx-stinger.png",
-    //     ],
-    //     basePrice: 250,
-    //     categoryId: headphonesCategory.id,
-    //     discountPercentage: 0, // 10% discount
-    //   },
-    //   {
-    //     name: "Razer Kraken X",
-    //     slug: "razer-kraken-x",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_razer-kraken.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_razer-kraken.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_razer-kraken.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_razer-kraken.png",
-    //     ],
-    //     basePrice: 200,
-    //     categoryId: headphonesCategory.id,
-    //     discountPercentage: 0, // 10% discount
-    //   },
-    // ];
-
-    // await prisma.product.createMany({
-    //   data: headphones,
-    // });
-
-    // const mousepadsCategory = await prisma.category.create({
-    //   data: {
-    //     name: "Mousepads",
-    //     slug: "mousepads",
-    //     imageUrl: "https://fsw-store.s3.sa-east-1.amazonaws.com/mousepads.png",
-    //   },
-    // });
-
-    // const mousepads = [
-    //   {
-    //     name: "Logitech Powerplay",
-    //     slug: "logitech-powerplay",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-powerplay.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-powerplay.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-powerplay.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-powerplay.png",
-    //     ],
-    //     basePrice: 950,
-    //     categoryId: mousepadsCategory.id,
-    //     discountPercentage: 10, // 10% discount
-    //   },
-    //   {
-    //     name: "Logitech Desk Mat",
-    //     slug: "logitech-desk-mat",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-desk-mat.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-desk-mat.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-desk-mat.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-desk-mat.png",
-    //     ],
-    //     basePrice: 150,
-    //     categoryId: mousepadsCategory.id,
-    //     discountPercentage: 0, // 10% discount
-    //   },
-    //   {
-    //     name: "Logitech G740",
-    //     slug: "logitech-g740",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-g740.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-g740.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-g740.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-g740.png",
-    //     ],
-    //     basePrice: 200,
-    //     categoryId: mousepadsCategory.id,
-    //     discountPercentage: 5, // 10% discount
-    //   },
-    //   {
-    //     name: "Logitech Mousepad Studio Series",
-    //     slug: "logitech-mousepad-studio-series",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-studio-series.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-studio-series.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-studio-series.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-studio-series.png",
-    //     ],
-    //     basePrice: 250,
-    //     categoryId: mousepadsCategory.id,
-    //     discountPercentage: 15, // 10% discount
-    //   },
-    //   {
-    //     name: "Force One Skyhawk Dark",
-    //     slug: "force-one-skyhawk-dark",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_force-dark.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_force-dark.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_force-dark.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_force-dark.png",
-    //     ],
-    //     basePrice: 300,
-    //     categoryId: mousepadsCategory.id,
-    //     discountPercentage: 10, // 10% discount
-    //   },
-    //   {
-    //     name: "Force One Skyhawk Snow",
-    //     slug: "force-one-skyhawk-snow",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_force-snow.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_force-snow.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_force-snow.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_force-snow.png",
-    //     ],
-    //     basePrice: 300,
-    //     categoryId: mousepadsCategory.id,
-    //     discountPercentage: 5, // 10% discount
-    //   },
-    // ];
-
-    // await prisma.product.createMany({
-    //   data: mousepads,
-    // });
-
-    // const monitorsCategory = await prisma.category.create({
-    //   data: {
-    //     name: "Monitores",
-    //     slug: "monitors",
-    //     imageUrl: "https://fsw-store.s3.sa-east-1.amazonaws.com/monitors.png",
-    //   },
-    // });
-
-    // const monitors = [
-    //   {
-    //     name: "Dell S2421HN",
-    //     slug: "dell-s2421hn",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_dell-S2421HN.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_dell-S2421HN.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_dell-S2421HN.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_dell-S2421HN.png",
-    //     ],
-    //     basePrice: 1500,
-    //     categoryId: monitorsCategory.id,
-    //     discountPercentage: 15, // 10% discount
-    //   },
-    //   {
-    //     name: "Dell P2422H",
-    //     slug: "dell-p2422h",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_dell-P2422H.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_dell-P2422H.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_dell-P2422H.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_dell-P2422H.png",
-    //     ],
-    //     basePrice: 2000,
-    //     categoryId: monitorsCategory.id,
-    //     discountPercentage: 5, // 10% discount
-    //   },
-    //   {
-    //     name: "Dell P2723QE",
-    //     slug: "dell-p2723qe",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_dell-P2723QE.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_dell-P2723QE.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_dell-P2723QE.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_dell-P2723QE.png",
-    //     ],
-    //     basePrice: 2500,
-    //     categoryId: monitorsCategory.id,
-    //     discountPercentage: 0, // 10% discount
-    //   },
-    //   {
-    //     name: "Dell S3422DWG",
-    //     slug: "dell-s3422dwg",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_dell-S3422DWG.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_dell-S3422DWG.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_dell-S3422DWG.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_dell-S3422DWG.png",
-    //     ],
-    //     basePrice: 3200,
-    //     categoryId: monitorsCategory.id,
-    //     discountPercentage: 0, // 10% discount
-    //   },
-    //   {
-    //     name: "Dell S3222DGM",
-    //     slug: "dell-s3222dgm",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_dell-S3222DGM.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_dell-S3222DGM.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_dell-S3222DGM.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_dell-S3222DGM.png",
-    //     ],
-    //     basePrice: 3500,
-    //     categoryId: monitorsCategory.id,
-    //     discountPercentage: 0, // 10% discount
-    //   },
-    //   {
-    //     name: "Dell AW2524HF",
-    //     slug: "dell-aw2524hf",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_dell-AW2524HF.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_dell-AW2524HF.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_dell-AW2524HF.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_dell-AW2524HF.png",
-    //     ],
-    //     basePrice: 4200,
-    //     categoryId: monitorsCategory.id,
-    //     discountPercentage: 10, // 10% discount
-    //   },
-    // ];
-
-    // await prisma.product.createMany({
-    //   data: monitors,
-    // });
-
-    // const speakersCategory = await prisma.category.create({
-    //   data: {
-    //     name: "Speakers",
-    //     slug: "speakers",
-    //     imageUrl: "https://fsw-store.s3.sa-east-1.amazonaws.com/speakers.png",
-    //   },
-    // });
-
-    // const speakers = [
-    //   {
-    //     name: "Logitech Surround Sound Z607",
-    //     slug: "logitech-surround-sound-z607",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-surround-z607.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-surround-z607.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-surround-z607.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-surround-z607.png",
-    //     ],
-    //     basePrice: 1200,
-    //     categoryId: speakersCategory.id,
-    //     discountPercentage: 5, // 10% discount
-    //   },
-    //   {
-    //     name: "Logitech Dock",
-    //     slug: "logitech-dock",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_logi-dock.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_logi-dock.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_logi-dock.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_logi-dock.png",
-    //     ],
-    //     basePrice: 4500,
-    //     categoryId: speakersCategory.id,
-    //     discountPercentage: 15, // 10% discount
-    //   },
-    //   {
-    //     name: "Sony SA-Z9R Speakers",
-    //     slug: "sony-sa-z9r-speakers",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_sony-SA-Z9R.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_sony-SA-Z9R.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_sony-SA-Z9R.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_sony-SA-Z9R.png",
-    //     ],
-    //     basePrice: 4000,
-    //     categoryId: speakersCategory.id,
-    //     discountPercentage: 10, // 10% discount
-    //   },
-    //   {
-    //     name: "Sony XB43 Extra Bass",
-    //     slug: "sony-xb43-extra-bass",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_sony-extra-bass.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_sony-extra-bass.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_sony-extra-bass.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_sony-extra-bass.png",
-    //     ],
-    //     basePrice: 3200,
-    //     categoryId: speakersCategory.id,
-    //     discountPercentage: 0, // 10% discount
-    //   },
-    //   {
-    //     name: "Sony XB23 Extra Bass",
-    //     slug: "sony-xb23-extra-bass",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_sony-XB23.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_sony-XB23.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_sony-XB23.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_sony-XB23.png",
-    //     ],
-    //     basePrice: 3500,
-    //     categoryId: speakersCategory.id,
-    //     discountPercentage: 0, // 10% discount
-    //   },
-    //   {
-    //     name: "Sony HT-S200F Soundbar",
-    //     slug: "sony-ht-s200f-soundbar",
-    //     description:
-    //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
-    //     imageUrls: [
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/01_sony-S200F.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/02_sony-S200F.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/03_sony-S200F.png",
-    //       "https://fsw-store.s3.sa-east-1.amazonaws.com/04_sony-S200F.png",
-    //     ],
-    //     basePrice: 2500,
-    //     categoryId: speakersCategory.id,
-    //     discountPercentage: 0, // 10% discount
-    //   },
-    // ];
-
-    // await prisma.product.createMany({
-    //   data: speakers,
-    // });
+    await prisma.product.createMany({
+      data: volkswagen,
+    });
 
     console.log("Seed completed successfully");
   } catch (error) {

@@ -1,5 +1,4 @@
 import { prismaClient } from "@/lib/prisma";
-import Image from "next/image";
 import Categories from "./components/categories";
 import ProductList from "./components/product-list";
 import PromoBanner from "./components/promo-banner";
@@ -14,18 +13,18 @@ export default async function Home() {
     },
   });
 
-  const keyboards = await prismaClient.product.findMany({
+  const chevrolet = await prismaClient.product.findMany({
     where: {
       category: {
-        slug: "keyboards",
+        slug: "chevrolet",
       },
     },
   });
 
-  const mouses = await prismaClient.product.findMany({
+  const volkswagen = await prismaClient.product.findMany({
     where: {
       category: {
-        slug: "mouses",
+        slug: "volkswagen",
       },
     },
   });
@@ -55,18 +54,13 @@ export default async function Home() {
         <PromoBanner src="/banner02.png" alt="Black Friday 50% off" />
 
         <div className="mt-8">
-          <TitleSection>Keyboards</TitleSection>
-          <ProductList products={keyboards} />
+          <TitleSection>Chevrolet</TitleSection>
+          <ProductList products={chevrolet} />
         </div>
 
         <div className="mt-8">
-          <TitleSection>Mouses</TitleSection>
-          <ProductList products={mouses} />
-        </div>
-
-        <div className="mt-8">
-          <TitleSection>Speakers</TitleSection>
-          <ProductList products={speakers} />
+          <TitleSection>Volkswagen</TitleSection>
+          <ProductList products={volkswagen} />
         </div>
       </div>
     </>
