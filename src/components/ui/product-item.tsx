@@ -12,7 +12,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
     <>
       <Link href={`/product/${product.slug}`}>
         <div className="flex min-w-[156px] flex-col gap-4">
-          <div className="relative flex h-full overflow-hidden w-full items-center justify-center rounded-lg bg-accent">
+          <div className="relative flex h-[10rem] overflow-hidden w-full items-center justify-center rounded-lg bg-accent">
             <Image
               src={product.imageUrls[0]}
               height={0}
@@ -41,7 +41,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
               {product.discountPercentage > 0 ? (
                 <>
                   <p className="overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold">
-                    R$ {product.totalPrice.toFixed(2)}
+                    R$ {product.formattedPrice}
                   </p>
 
                   <p className="opacity-75{ overflow-hidden text-ellipsis whitespace-nowrap text-sm text-xs line-through">
@@ -50,7 +50,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
                 </>
               ) : (
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold">
-                  R$ {product.basePrice.toFixed(2)}
+                  R$ {product.formattedPrice}
                 </p>
               )}
             </div>

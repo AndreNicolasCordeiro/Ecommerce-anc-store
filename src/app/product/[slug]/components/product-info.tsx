@@ -34,7 +34,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
       <div className="flex items-center gap-2">
         <h1 className="text-xl font-bold">
-          R$ {Number(product.totalPrice).toFixed(2)}
+        {product.formattedPrice}
         </h1>
         {product.discountPercentage > 0 && (
           <DiscountBadge>{product.discountPercentage}</DiscountBadge>
@@ -43,7 +43,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
       {product.discountPercentage > 0 && (
         <p className="text-sm line-through opacity-75">
-          R$ {Number(product.basePrice).toFixed(2)}
+          {Number(product.basePrice).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
         </p>
       )}
 
