@@ -12,7 +12,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
     <>
       <Link href={`/product/${product.slug}`}>
         <div className="flex min-w-[156px] flex-col gap-4">
-          <div className="relative flex h-[10rem] overflow-hidden w-full items-center justify-center rounded-lg bg-accent">
+          <div className="relative flex h-[10rem] overflow-hidden w-full items-center justify-center rounded-lg bg-accent  border-2 border-transparent transition duration-300 hover:border-primary">
             <Image
               src={product.imageUrls[0]}
               height={0}

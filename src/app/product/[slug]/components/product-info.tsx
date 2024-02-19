@@ -85,9 +85,9 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
           <div className="flex flex-col">
             <p className="text-xs">
-              Entrega via <span className="font-bold">FSPacket®</span>
+              Entrega via <span className="font-bold">AllVec®</span>
             </p>
-            <p className="text-xs text-[#8162FF]">
+            <p className="text-xs text-primary">
               Envio para <span className="font-bold">todo Brasil</span>
             </p>
           </div>
